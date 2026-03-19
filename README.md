@@ -1,67 +1,87 @@
-# APS_Criptografia
-Trabalho APS Criptografia para sistema de urna eletrônica em Python.
+# Electronic Voting System with XOR Encryption
 
-Projeto APS: Urna Eletrônica com Criptografia e Hash gerado com o OS
+A Python-based electronic voting system featuring XOR encryption and custom hash integrity verification.
 
-Descrição
-Este projeto foi desenvolvido como parte da APS (Atividades Práticas Supervisionadas) para a disciplina de Introdução à Programação Estruturada. O objetivo é implementar uma urna eletrônica capaz de cadastrar votos, criptografar os dados usando um método simples de criptografia (XOR) e garantir a integridade do arquivo gerado utilizando uma função de hash customizada com base na biblioteca os. Posteriormente, será desenvolvido um segundo programa para validar e apurar os votos de maneira segura.
+---
 
-Estrutura do Projeto
-Programa 1: Cadastramento de Votos, Criptografia e Geração de Hash
+## 📖 Description
 
-- Cadastra os votos de diferentes candidatos.
-- Criptografa os dados dos votos utilizando a operação XOR com uma chave fixa.
-- Gera um hash dos dados criptografados usando uma função de hash customizada com o os para garantir a integridade.
-- Salva os votos criptografados e o hash em um arquivo de texto.
+This project was developed as part of a Supervised Practical Activity (APS) for the **Introduction to Structured Programming** course. The goal is to implement an electronic voting system capable of registering votes, encrypting data using XOR, and ensuring file integrity through a custom hash function built with Python's `os` library.
 
-Programa 2 (A ser implementado): Validação, Descriptografia e Apuração
+A second program will be developed to securely validate and tally the votes.
 
-- Validará o arquivo com base no hash gerado.
-- Descriptografará os votos.
-- Apurará e exibirá os resultados.
+---
 
-Pré-requisitos
-- Python 3.x instalado no sistema.
-- Utilização da biblioteca padrão os para a geração de um hash simples e personalizado.
+## 📦 Project Structure
 
-Como Executar o Programa 1
-1.Clone o repositório ou faça o download dos arquivos:
+### Program 1: Vote Registration, Encryption & Hash Generation
+- Registers votes for different candidates
+- Encrypts vote data using XOR with a fixed key
+- Generates a custom hash of the encrypted data using the `os` library to ensure integrity
+- Saves the encrypted votes and hash to a text file
 
-git clone <URL_do_repositório>
-cd <diretório_do_projeto>
+### Program 2 *(to be implemented)*: Validation, Decryption & Tallying
+- Validates the file based on the generated hash
+- Decrypts the votes
+- Tallies and displays the final results
 
+---
 
-2.Execute o programa principal:
+## ✅ Prerequisites
+
+- Python 3.x installed
+- Python standard `os` library (no extra installs needed)
+
+---
+
+## 🚀 How to Run Program 1
+
+**1. Clone the repository:**
+```bash
+git clone <repository_url>
+cd <project_directory>
+```
+
+**2. Run the main program:**
+```bash
 python programa_urna.py
+```
 
+**3. Follow the terminal prompts:**
+- Enter candidate names and vote counts
+- Type `fim` when done to finish registration
 
-3.Siga as instruções no terminal:
-Digite o nome dos candidatos e quantidades de votos.
-Quando terminar, digite "fim" para encerrar o cadastramento.
+**4. Check the generated file:**  
+The program will save `votos_criptografados.txt` containing the encrypted votes and the generated hash. This file will be used by Program 2 for validation and tallying.
 
-4.Verifique o arquivo gerado:
-O programa salvará um arquivo chamado votos_criptografados.txt, contendo os votos criptografados e o hash gerado com o os.
-Esse arquivo será utilizado pelo segundo programa para a validação e apuração.
+---
 
+## 📄 Output File: `votos_criptografados.txt`
 
-Arquivo votos_criptografados.txt
+This file contains:
+1. The encrypted vote data
+2. The hash value generated with `os`, used to verify data integrity in Program 2
 
-Este arquivo contém:
-
-1.Os votos criptografados.
-2.O valor do hash gerado com o os, que será utilizado para verificar a integridade dos dados no segundo programa.
-
-Exemplo de Conteúdo do Arquivo Gerado
+**Example output:**
+```
 ÊëÜé:1ÍÝãÜÜÜñ:2îòñññç,
 f4a2d3e9b7a5f948a19c471c
+```
+- **Line 1**: Encrypted data
+- **Line 2**: Hash of the encrypted data
 
-Linha 1: Dados criptografados.
-Linha 2: Hash gerado com o os dos dados criptografados.
+---
 
-Estrutura dos Arquivos
-├── programa_urna.py          # Código do primeiro programa: Cadastra, Criptografa e Gera Hash com 'os'
-├── votos_criptografados.txt  # Arquivo gerado contendo os votos criptografados e o hash gerado
-└── README.md                 # Este arquivo
+## 🗂️ File Structure
 
-Licença
-Este projeto é de código aberto e está disponível sob os termos da Licença MIT.
+```
+├── programa_urna.py          # Program 1: registers, encrypts, and generates hash
+├── votos_criptografados.txt  # Output file with encrypted votes and hash
+└── README.md                 # This file
+```
+
+---
+
+## 🛡️ License
+
+This project is open source and available under the [MIT License](LICENSE).
